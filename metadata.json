@@ -1,0 +1,7 @@
+{
+  "name": "Mentra - AI Mental Health Assistant",
+  "description": "A sophisticated mental health companion that analyzes your needs to match you with the ideal therapist using advanced AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
