@@ -1,13 +1,12 @@
-
 import React from 'react';
 
 export const COLORS = {
-  primary: '#4D7C75',
-  secondary: '#3A5D58',
-  background: '#F2F8F5',
-  surface: '#E6F0EB',
-  accent: '#99C9B6',
-  text: '#1B3022',
+  primary: '#6AA495',    // Muted Mint
+  secondary: '#316263',  // Transformative Teal
+  background: '#F3F0FF', // Quartz
+  surface: '#FFFFFF80',  // Translucent White
+  accent: '#E6E6FA',     // Lavender Web
+  text: '#316263',       // Transformative Teal
   white: '#FFFFFF',
 };
 

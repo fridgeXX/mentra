@@ -3,55 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mentra</title>
+    <title>Mentra | Premium Mental Health</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --spring-ease: cubic-bezier(0.3, 1.5, 0.5, 1);
+        --smooth-ease: cubic-bezier(0.65, 0, 0.35, 1);
+        
+        /* The "Glow & Flow" Palette */
+        --quartz: #F3F0FF;
+        --muted-mint: #6AA495;
+        --transformative-teal: #316263;
+        --translucent-white: rgba(255, 255, 255, 0.5); /* Requested 50% opacity */
+        --aurora-blue: #F0F8FF;
+        --aurora-purple: #E6E6FA;
+      }
+
       body {
-        font-family: 'Quicksand', sans-serif;
-        background-color: #F2F8F5; /* New thematic light green */
-        color: #1B3022; /* Deep charcoal-green */
+        font-family: 'Instrument Sans', sans-serif;
+        background-color: var(--quartz);
+        color: var(--transformative-teal);
         margin: 0;
+        -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
       }
+
+      h1, h2, h3, .serif {
+        font-family: 'Fraunces', serif;
+      }
+
+      /* Liquid Glass Panel - 50% opacity frosted look */
+      .glass-liquid {
+        background: var(--translucent-white);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 10px 30px -5px rgba(168, 154, 205, 0.1);
+      }
+
+      /* Deep Glass for overlays and inputs */
+      .glass-deep {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(40px);
+        border: 1px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.05);
+      }
+
+      @keyframes aurora-flow {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(10%, -5%) scale(1.1); }
+        66% { transform: translate(-5%, 10%) scale(0.9); }
+      }
+
+      .animate-aurora {
+        animation: aurora-flow 15s ease-in-out infinite alternate;
+      }
+
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
       
-      .glass {
-        background: rgba(255, 255, 255, 0.45);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(77, 124, 117, 0.15);
+      .bento-wide {
+        grid-column: span 2;
       }
 
-      /* Subtle organic pattern for the background */
-      .bg-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm66-3c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-46-45c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm54 54c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM58 7c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm-33 88c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm54-67c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zM80 17c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zM9 52c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2zm33 48c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm-8-74c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm34 5c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm-44 57c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm57-33c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zM58 37c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm-28 14c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm54 14c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zM46 20c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm28 28c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zM21 21c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm19 19c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zM13 13c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2zm19 19c0-1.105.895-2 2-2s2 .895 2 2-.895 2-2 2-2-.895-2-2z' fill='%234d7c75' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+      ::-webkit-scrollbar {
+        width: 0px;
       }
 
-      .noise-texture {
-        background-image: url('https://www.transparenttextures.com/patterns/pollen.png');
-        opacity: 0.05;
-      }
-
-      /* Reassuring idle animation for the mascot in the header */
-      @keyframes docked-idle {
-        0%, 100% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-2px) scale(1.02); }
-      }
-      .animate-docked-idle {
-        animation: docked-idle 3.5s ease-in-out infinite;
+      .ios-active-scale:active {
+        transform: scale(0.96);
+        transition: transform 0.2s var(--spring-ease);
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+      }
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
   </body>

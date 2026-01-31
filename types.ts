@@ -3,7 +3,11 @@ export enum View {
   LANDING = 'LANDING',
   CHATTING = 'CHATTING',
   ANALYZING = 'ANALYZING',
-  RESULTS = 'RESULTS'
+  TRIAGE = 'TRIAGE',
+  WAITING = 'WAITING',
+  PROPOSAL = 'PROPOSAL',
+  PAYMENT = 'PAYMENT',
+  CONFIRMED = 'CONFIRMED'
 }
 
 export interface Message {
@@ -12,16 +16,25 @@ export interface Message {
   content: string;
 }
 
-export interface TherapistMatch {
-  name: string;
-  specialty: string;
-  matchScore: number;
+export interface SupportGroup {
+  id: string;
+  theme: string;
+  focus: string;
   description: string;
-  imageUrl: string;
+  therapist: {
+    name: string;
+    imageUrl: string;
+    credentials: string;
+  };
+  details?: {
+    dateTime: string;
+    price: string;
+  };
 }
 
 export interface AnalysisResponse {
   summary: string;
-  matches: TherapistMatch[];
-  suggestedAction: string;
+  theme: string;
+  insight: string;
+  groupMatch: SupportGroup;
 }
