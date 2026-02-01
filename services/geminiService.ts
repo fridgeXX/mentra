@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { AnalysisResponse } from "../types";
 
@@ -40,7 +39,8 @@ export class GeminiService {
 
   async getResponse(history: {role: string, content: string}[]): Promise<string> {
     return this.withRetry(async () => {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+      // Create a new instance right before the call as per guidelines
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
         contents: history.map(h => ({ 
@@ -49,13 +49,15 @@ export class GeminiService {
         })),
         config: { systemInstruction: SYSTEM_INSTRUCTION, temperature: 0.8 }
       });
+      // Correctly access the .text property
       return response.text || "I'm here.";
     });
   }
 
   async analyzeMentalState(history: string): Promise<AnalysisResponse> {
     return this.withRetry(async () => {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+      // Create a new instance right before the call as per guidelines
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const response = await ai.models.generateContent({
         model: "gemini-3-pro-preview",
         contents: `Analyze conversation for group triage. Return JSON.
@@ -97,6 +99,7 @@ export class GeminiService {
         }
       });
 
+      // Correctly access the .text property
       const text = response.text || "";
       try {
         return JSON.parse(text) as AnalysisResponse;

@@ -19,10 +19,10 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
   };
 
   return (
-    <div className={`fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-xl px-6 z-[100] transition-all duration-700 ${isFocused ? 'bottom-10' : 'bottom-8'}`}>
+    <div className={`fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-xl px-6 z-[100] transition-all duration-500 ${isFocused ? 'bottom-10' : 'bottom-8'}`}>
       <form 
         onSubmit={handleSubmit} 
-        className={`glass-deep rounded-[3rem] p-2 flex items-center transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(49,98,99,0.15)] ${isFocused ? 'ring-4 ring-[#6AA495]/20 scale-[1.02]' : 'border-white/80'}`}
+        className={`bg-white/95 rounded-full p-2 flex items-center transition-all duration-300 border border-[#D8E2DC] shadow-xl ${isFocused ? 'border-[#2D6A4F]/40 ring-4 ring-[#2D6A4F]/5' : ''}`}
       >
         <input
           type="text"
@@ -30,17 +30,17 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="What's on your mind?"
-          className="flex-1 bg-transparent px-8 py-4 text-xl outline-none text-[#316263] placeholder-[#316263]/20 font-medium"
+          placeholder="Transmit signal..."
+          className="flex-1 bg-transparent px-6 py-4 text-sm outline-none text-[#1B4332] placeholder-[#1B4332]/25 font-medium"
           disabled={isLoading}
         />
         <button 
           type="submit" 
           disabled={!value.trim() || isLoading}
-          className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 transform ${
+          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 transform ${
             value.trim() && !isLoading 
-              ? 'bg-[#316263] text-white scale-100 shadow-xl active:scale-90 hover:brightness-110' 
-              : 'bg-gray-100 text-gray-300 scale-75 opacity-0'
+              ? 'bg-[#1B4332] text-[#F4F7F5] scale-100 shadow-md active:scale-90' 
+              : 'bg-[#D8E2DC]/40 text-[#52796F] scale-90 opacity-40'
           }`}
         >
           <Icons.Send />
