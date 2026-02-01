@@ -2,21 +2,6 @@
 
 Mentra is a sophisticated, grounded mental health assistant designed to bridge the gap between AI conversation and clinical triage. Built with a "premium organic" aesthetic, it focuses on human-first listening and somatic awareness.
 
-## 🧠 The Brain of Mentra
-
-Mentra utilizes a dual-layered AI architecture powered by the Google Gemini API to balance empathy with precision:
-
-- **Gemini 3 Flash (The Heart):** Manages real-time conversation. Optimized for speed and low latency, it follows strict behavioral guidelines to act as a grounded peer, focusing on reflection and brevity.
-- **Gemini 3 Pro (The Mind):** Orchestrates post-session analysis. It synthesizes conversational history to identify deep-seated psychological themes (Grief, Burnout, Loneliness) and matches users with specific therapeutic paths and support groups.
-
-## 🎨 Design Philosophy: "Clinical Organic"
-
-The interface is anchored in a palette designed to be heavy yet soothing:
-- **Deep Seaweed (#1B4332):** Grounded headers and clinical anchor.
-- **Forest Canopy (#2D6A4F):** Primary actions and vital energy.
-- **Iced Matcha (#D8E2DC):** Translucent glass elements with heavy blur.
-- **Morning Mist (#F4F7F5):** A soft, eye-friendly canvas.
-
 ## 🚀 Installation & Setup
 
 ### Prerequisites
