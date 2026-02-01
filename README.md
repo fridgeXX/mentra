@@ -1,20 +1,58 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Mentra | AI Mental Health Companion
 
-# Run and deploy your AI Studio app
+Mentra is a sophisticated, grounded mental health assistant designed to bridge the gap between AI conversation and clinical triage. Built with a "premium organic" aesthetic, it focuses on human-first listening and somatic awareness.
 
-This contains everything you need to run your app locally.
+## 🧠 The Brain of Mentra
 
-View your app in AI Studio: https://ai.studio/apps/drive/1R9PzQiB48ilq6Bxc_0HZga28n7deNqQp
+Mentra utilizes a dual-layered AI architecture powered by the Google Gemini API to balance empathy with precision:
 
-## Run Locally
+- **Gemini 3 Flash (The Heart):** Manages real-time conversation. Optimized for speed and low latency, it follows strict behavioral guidelines to act as a grounded peer, focusing on reflection and brevity.
+- **Gemini 3 Pro (The Mind):** Orchestrates post-session analysis. It synthesizes conversational history to identify deep-seated psychological themes (Grief, Burnout, Loneliness) and matches users with specific therapeutic paths and support groups.
 
-**Prerequisites:**  Node.js
+## 🎨 Design Philosophy: "Clinical Organic"
 
+The interface is anchored in a palette designed to be heavy yet soothing:
+- **Deep Seaweed (#1B4332):** Grounded headers and clinical anchor.
+- **Forest Canopy (#2D6A4F):** Primary actions and vital energy.
+- **Iced Matcha (#D8E2DC):** Translucent glass elements with heavy blur.
+- **Morning Mist (#F4F7F5):** A soft, eye-friendly canvas.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🚀 Installation & Setup
+
+### Prerequisites
+- Node.js (v18 or higher)
+- A Google Gemini API Key ([Get one here](https://aistudio.google.com/app/apikey))
+
+### Steps
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/mentra-app.git
+   cd mentra-app
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   - Create a `.env` file in the root directory.
+   - Add your Gemini API key:
+     ```env
+     API_KEY=your_gemini_api_key_here
+     ```
+
+4. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+## 🛠 Tech Stack
+- **Frontend:** React 19, Tailwind CSS
+- **AI:** Google GenAI SDK (@google/genai)
+- **Typography:** Fraunces (Serif), Inter (Sans-serif)
+- **Animations:** Custom CSS keyframes for somatic flow
+
+## ⚖️ Safety Disclaimer
+Mentra is an AI-driven tool for supportive listening and triage guidance. It is not a replacement for professional medical advice, diagnosis, or treatment. It includes hard-coded safety guardrails to pivot to professional crisis resources when self-harm or immediate distress is detected.
